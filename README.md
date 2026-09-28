@@ -1,9 +1,14 @@
 # Modeling protein Kunitz domains with a Hidden Markov model
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0dee898 (Updated readme file)
 ## Overview 
 Kunitz domains are compact cysteine-rich protein domains involved in protease inhibition, toxin activity, coagulation, and disease-related pathways. Because sequence divergence can obscure their detection, accurate computational annotation remains important for comparative protein analysis.
 
 This repository details a comprehensive bioinformatics workflow for the characterization of Kunitz domains. Data was retrieved from the Protein Data Bank (`PDB`) and cleaned. The obtain sequence were cluster avoid data redundancy and biases, and structural alignment with `mTMalign` was carried out to identify conserved motifs. A Hidden Markov Model (HMM) is then built to capture the unique sequence patterns of Kunitz domains. Finally, the model's predictive performance is thoroughly evaluated using both positive and negative datasets derived from UniProt, culminating in the determination of an optimal E-value threshold and assessment of its classification accuracy.
 
+<<<<<<< HEAD
 ## Objectives
 
 - Construct profile HMMs from structurally aligned Kunitz domain sequences 
@@ -94,3 +99,24 @@ conda install -c bioconda hmmer
 conda install -c conda-forge -c bioconda mmseqs2
 conda install bioconda::mtm-align
 ```
+=======
+## Methodology
+### 1. Data collection 
+Protein structures and features were selected from the PDB. The obtain results were filtered to retain only Pfam-annotated entries, and duplicated were remove base on PDB ID.
+
+### 2. Data Processing
+Representative sequences were identified with `MMseqs2`. CIF files for the representative PDB entries were downloaded, and
+the corresponding chains were extracted using the identified chain IDs. Structural alignments were generated with `mTM-align` and `PDBeFold` and exported as FASTA files. Sequences that did not align consistently with the majority of sequences were excluded. Sequence logos were compared with `Skylign` to select the alignment that best captured the conserved cysteine pattern and was therefore most suitable for HMM training.
+
+### 3. Model Training
+To standardize alignment lengths, sequences were truncated to 139 residues for mTM-align. The HMM profile was then constructed from the aligned sequences using `HMMER’s hmmbuild` function. 
+
+### 4. MOdel Testing
+Positive and negative datasets were obtained from `UniProt`: reviewed entries annotated with Pfam PF00014 were labeled as the positive set, whereas reviewed entries without Kunitz domain annotation were used as the negative set. `hmmsearch` was run on both sets using the train model, and the outputs were parsed into DataFrames containing target names, E-values, scores, biases, and labels (1 for positive and 0 for negative). Non-matching negative entries were assigned a nominal E-value of
+100. The datasets were shuffled and split into two halves for cross-validation. Performance was assessed using accuracy and the Matthews correlation coefficient (MCC) across E-value thresholds from $10^{−1}$ to $10^{−14}$. The optimal threshold
+was then applied to the second set to compute the confusion matrix, ROC curve, and AUC.
+
+## Results
+
+## Environment setup and tools  
+>>>>>>> 0dee898 (Updated readme file)
