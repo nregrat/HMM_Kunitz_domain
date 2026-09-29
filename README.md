@@ -36,10 +36,10 @@ The HMM model was trained with the multiple sequence aligment. For the sequence 
 
 The optimal threshold obtain with 2 cross validation set was $10^{-5}$ giving an efficient model for identifying the Kunitz domain in protein sequences. 
 
-|----|---|----|
-|MCC|  0.991|
-|Accuracy| 0.999|
-|F1 Score |0.991|
+||MCC|Accuracy|F1|
+|----|---|----|---|
+|Score|  0.991|0.999|0.991|
+
 
 As evidence by the metrics and the AUC, the model was capable of identifying the presence on the Kunitz domain in the protein sequence with high accuracy.
 
