@@ -23,7 +23,7 @@ Representative sequences were identified with `MMseqs2`. CIF files for the repre
 ### [3. Model Training](./03_ModelTraning/ModelTraning.ipynb)
 To standardize alignment lengths, sequences were truncated to 139 residues for mTM-align. The HMM profile was then constructed from the aligned sequences using `HMMER’s hmmbuild` function. 
 
-### [4. Model Testing](./04_ModelEvaluation/ModelTraning.ipynb)
+### [4. Model Testing](./04_ModelEvaluation/ModelEvaluation.ipynb)
 Positive and negative datasets were obtained from `UniProt`: reviewed entries annotated with Pfam PF00014 were labeled as the positive set, whereas reviewed entries without Kunitz domain annotation were used as the negative set. `hmmsearch` was run on both sets using the train model, and the outputs were parsed into DataFrames containing target names, E-values, scores, biases, and labels (1 for positive and 0 for negative). Non-matching negative entries were assigned a nominal E-value of 100. The datasets were shuffled and split into two halves for cross-validation. Performance was assessed using accuracy and the Matthews correlation coefficient (MCC) across E-value thresholds from $10^{−1}$ to $10^{−14}$. The optimal threshold was then applied to the second set to compute the confusion matrix, ROC curve, and AUC.
 
 ## Results
