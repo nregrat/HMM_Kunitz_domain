@@ -28,7 +28,8 @@ Positive and negative datasets were obtained from `UniProt`: reviewed entries an
 
 ## Results
 A total of 135 unique entries were obtain from PDB annotated as Pfam (PF00014), with resolution lower than 3.5 an of length between 40-80 residue. Then the sequence were cluster in 20 groups with 95% of identity and 85% of coverage and a representative sequence for each was selected. This sequence were structurally align to derive the multiple sequence aligment. Problematic sequence were excluded and sequence logo was revise to ensure the caption of the domain representatives cysteines
-The HMM model was trained with the multiple sequence aligment. For the sequence evaluation a set of positive entries ( Pfam and review) and a set of negative entries (Not Pfam and review) were downloaded from UniProt and run with the model, so a E-value, fix to a dimension of 1000 sequences, was computed for each sequence in both set. FOr the positive set 3 sequence were excluded to avoid overfitting. Both sets were shuffle and merge into one data frame to create the cross validation sets. 
+
+The HMM model was trained with the multiple sequence aligment. For the sequence evaluation a set of positive entries ( Pfam and review) and a set of negative entries (Not Pfam and review) were downloaded from UniProt and run with the model, so a E-value, fix to a dimension of 1000 sequences, was computed for each sequence in both set. For the positive set 3 sequence were excluded to avoid overfitting. Both sets were shuffle and merge into one data frame to create the cross validation sets. 
 
 | |Positive| Negative| Total|
 |--|-------|--------|------|
@@ -82,7 +83,7 @@ To run this pipeline, the following command-line tools, packages and web resourc
 | matplotlib| Plots and graphs|
 
 ### Installation via Conda
-For installing the command-line tools a conda enviorment was created and a;; the programs instal 
+For installing the command-line tools a conda enviorment was created and all the programs install 
 
 ```bash
 # Create and activate a dedicated conda environment
