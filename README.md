@@ -80,7 +80,7 @@ To run this pipeline, the following command-line tools, packages and web resourc
 |`pathlib`| Manages the files paths|
 |`numpy`|	Perform numerical and array operations|
 | `sklearn`| Model evaluation and metrics|
-| matplotlib| Plots and graphs|
+|`matplotlib`| Plots and graphs|
 
 ### Installation via Conda
 For installing the command-line tools a conda enviorment was created and all the programs install 
