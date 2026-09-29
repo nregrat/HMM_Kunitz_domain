@@ -140,6 +140,7 @@ To run this pipeline, the following command-line tools, packages and web resourc
 - [PDB](https://www.rcsb.org/): database to query for obtaining the protein sequence, the protein structure and other features for the model training
 - [UniProt](https://www.uniprot.org/): database tp query for obtaining the positive and negative sets
 - [Skylign](https://skylign.org/): for generate sequence logo visualizations from the multiple sequence alignment
+- [NCBI MSA Viewer](https://www.ncbi.nlm.nih.gov/projects/msaviewer/?appname=ncbi_msav&openuploaddialog): foe visualization of multiple sequence aligment
 - [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/cgi-bin/ssmserver): for multiple sequence aligment based on structural aligment
 - [Pfam](https://www.ebi.ac.uk/interpro/entry/pfam/#table): for reference of biological information on the Kunitz-type domain
 - [InterPro](https://www.ebi.ac.uk/interpro/entry/pfam/PF00014/): for confirming domain annotations
@@ -151,6 +152,7 @@ To run this pipeline, the following command-line tools, packages and web resourc
 |`pandas`|	Manage tabular data and data frames or read/write CSVs|
 |`requests`| for querying the PDB throw the API|
 |`numpy`|	Perform numerical and array operations|
+|`pathlib`| Manage the paths of the repository|
 
 ### Installation via Conda
 For installing the command-line tools a conda enviorment was created and a;; the programs instal 
