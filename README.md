@@ -35,7 +35,7 @@ The HMM model was trained with the multiple sequence aligment. For the sequence 
 |--|-------|--------|------|
 |sequences| 395|574229|574624|
 
-The optimal threshold obtain with 2 cross validation set was $10^{-5}$ giving an efficient model for identifying the Kunitz domain in protein sequences. 
+The optimal threshold obtain with 2 cross validation set was $10^{-6}$ giving an efficient model for identifying the Kunitz domain in protein sequences. 
 
 ||MCC|Accuracy|F1|
 |----|---|----|---|
